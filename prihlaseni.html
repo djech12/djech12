@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martial Flow | Gate</title>
+    <link rel="stylesheet" href="prihlaseni.css">
+    <link rel="icon" type="images/" href="images/Frame 3.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div>
+            <img src="images/MartialFlow LOGO.png" alt="">
+        </div>
+    </header>
+
+    <main>
+        <section id="container-back">
+           <nav class="switch-container">
+            <button id="loginBtn" class="active">Přihlášení</button>
+            <button id="registerBtn">Registrace</button>
+           </nav>
+        
+        <article id="loginForm" class="form-container">
+            <form>
+                <fieldset class="form-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="login-password">Heslo</label>
+                    <input type="password" id="login-password">
+                </fieldset>
+                <button type="submit" class="btn1">Přihlásit se</button>
+            </form>
+            <div class="reset">Reset hesla</div>
+        </article>
+
+        <article id="registerForm" class="form-container hidden">
+            <form>
+                <fieldset class="form-group">
+                    <label for="register-email">E-mail</label>
+                    <input type="email" id="register-email">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="register-name">Jméno</label>
+                    <input type="text" id="register-name">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="register-surname">Příjmení</label>
+                    <input type="text" id="register-surname">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="register-password">Heslo</label>
+                    <input type="password" id="register-password">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="register-password2">Heslo znovu</label>
+                    <input type="password" id="register-password2">
+                </fieldset>
+                <button type="submit" class="btn1">Registrovat</button>
+            </form>
+        </article>
+        </section>
+    </main>
+
+<script src="prihlaseni.js"></script>
+</body>
+</html>

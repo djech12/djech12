@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martial Flow | Přidat událost</title>
+    <link rel="icon" type="images/" href="images/Frame 3.png">
+    <link rel="stylesheet" href="pridatUdalost.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div>
+            <img src="images/MartialFlow LOGO.png" alt="">
+        </div>
+    </header>
+
+    <main>
+        <section id="container-back">
+
+            <article id="pridatForm" class="pridat-container">
+                <form>
+                    <fieldset class="pridat-group">
+                        <label for="pridat-sport">Sport</label>
+                        <select id="pridat-sport">
+                            <option value="">Vyber sport</option>
+                            <option value="mma">MMA</option>
+                            <option value="bjj">BJJ</option>
+                            <option value="muay">MUAY THAI</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="pridat-group">
+                        <label for="pridat-podnazev">Podnázev</label>
+                        <input type="text" id="pridat-podnazev">
+                    </fieldset>
+                    <fieldset class="pridat-group">
+                        <label for="pridat-gym">Tělocvična</label>
+                        <select id="pridat-gym">
+                            <option value="">Vyber tělocvičnu</option>
+                            <option value="gym1">Gym 1</option>
+                            <option value="gym2">Gym 2</option>
+                            <option value="gym3">Gym 3</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="pridat-group">
+                        <label for="pridat-trener">Trenér</label>
+                        <input type="text" id="pridat-trener">
+                    </fieldset>
+                    <fieldset class="pridat-group">
+                        <label for="pridat-datum">Datum</label>
+                        <input type="date" id="pridat-datum">
+                    </fieldset>
+                    <fieldset class="pridat-group">
+                        <label for="pridat-zacatek">Čas začátku</label>
+                        <input type="time" id="pridat-zacatek">
+                    </fieldset>
+                    <fieldset class="pridat-group">
+                        <label for="pridat-konec">Čas konce</label>
+                        <input type="time" id="pridat-konec">
+                    </fieldset>
+                    <fieldset class="pridat-group group-kategorie">
+                        <label>Kategorie</label>
+                        <div class="input-container">
+                            <div class="input-wrapper">
+                                <input type="checkbox" id="pridat-kategorie-a">
+                                <label for="pridat-kategorie-a">A</label>
+                            </div>
+                            <div class="input-wrapper">
+                                <input type="checkbox" id="pridat-kategorie-b">
+                                <label for="pridat-kategorie-b">B</label>
+                            </div>
+                            <div class="input-wrapper">
+                                <input type="checkbox" id="pridat-kategorie-c">
+                                <label for="pridat-kategorie-c">C</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset class="pridat-group group-druh">
+                        <label>Druh</label>
+                        <div class="input-container">
+                            <div class="input-wrapper">
+                                <input type="checkbox" id="pridat-druh-muz">
+                                <label for="pridat-druh-muz">Muž</label>
+                            </div>
+                            <div class="input-wrapper">
+                                <input type="checkbox" id="pridat-druh-zena">
+                                <label for="pridat-druh-zena">Žena</label>
+                            </div>
+                            <div class="input-wrapper">
+                                <input type="checkbox" id="pridat-druh-dite">
+                                <label for="pridat-druh-dite">Dítě</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <button type="submit" class="btn2">Přidat</button>
+            </article>
+
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*****************************************************************************************/
+body{
+    background: #d9d9d9;
+    font-family: 'Monsterat', sans-serif;
+}
+
+header div{
+    text-align: center;
+    margin: 13% 0 8% 0;
+}
+
+header div img{
+    width: 80%;
+}
+
+/************************************************************************/
+#container-back{
+    background: #1e1e1e;
+    padding-top: 40px; 
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    text-align: center;
+}
+
+.pridat-container {
+    background: #f8f8f8;
+    color: #1e1e1e;
+    padding: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: 20px !important;
+    margin: 0 auto;
+    padding-bottom: 30%;
+    border: 10px solid #d72638;
+    border-bottom: 0px;
+    max-height: 82vh;
+}
+
+.pridat-container form{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.pridat-group {
+    margin-bottom: 15px;
+    text-align: left;
+    border: none;
+    width: 100%;
+}
+
+.pridat-group label {
+    font-weight: bold;
+    margin: 0 0 5px 10px;
+    color: #d72638;
+    font-size: 20px;
+}
+
+.pridat-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #1e1e1e;
+    border-radius: 20px;
+    background: transparent;
+    height: 43px;
+}
+
+.pridat-group input:focus{
+    border: 2px solid #d72638;
+    outline: 1px solid #d72638;
+}
+
+#pridat-sport, #pridat-gym{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #1e1e1e;
+    border-radius: 20px;
+    background: transparent;
+    height: 43px;
+}
+
+
+.group-kategorie div, .group-druh div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.group-druh .input-container{
+    justify-content: space-between;
+    width: 130%;
+    margin: 0 0 0 15px;
+}
+
+.group-kategorie div label, .group-druh div label{
+    width: 20px;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.group-kategorie div input, .group-druh div input{
+    width: 16px;
+}
+
+.group-kategorie div input:focus, 
+.group-druh div input:focus{
+    outline: none;
+}
+
+.btn2 {
+    width: 50%;
+    padding: 16px 2px;
+    background: #d72638;
+    color: #f8f8f8;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 30px auto;
+    border-radius: 30px;
+    font-weight: bold;
+    display: block;
+}
+
+.btn2:hover {
+    background: #a50f0f;
+}
+
+/************************************************************************************************/
+
+@media(min-width: 768px){
+    header div img{
+        width: 614.39px;
+    }
+
+    .pridat-container{
+        margin: 0px auto;
+        max-width: 614.41px;
+    }
+
+    .pridat-container form{
+        max-width: 554.41px;
+    }
+}
