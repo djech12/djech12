@@ -87,31 +87,31 @@ header div img{
 }
 
 
-.group-kategorie div, .group-druh div{
+.group-kategorie div, .group-dovednost div{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.group-druh .input-container{
+.group-kategorie .input-container{
     justify-content: space-between;
     width: 130%;
     margin: 0 0 0 15px;
 }
 
-.group-kategorie div label, .group-druh div label{
+.group-dovednost div label, .group-kategorie div label{
     width: 20px;
     font-size: 16px;
     margin-top: 4px;
 }
 
-.group-kategorie div input, .group-druh div input{
+.group-dovednost div input, .group-kategorie div input{
     width: 16px;
 }
 
 .group-kategorie div input:focus, 
-.group-druh div input:focus{
+.group-dovednost div input:focus{
     outline: none;
 }
 
@@ -131,7 +131,7 @@ header div img{
 }
 
 .btn2:hover {
-    background: #a50f0f;
+    background: #6b0b0b;
 }
 
 /************************************************************************************************/

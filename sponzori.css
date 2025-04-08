@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**************************************************************************************************************/
+body{
+    background: #d9d9d9;
+    font-family: 'Monsterat', sans-serif;
+    overflow: hidden;
+}
+
+/*************************************************************************************************************/
+
+#container-back{
+    background: #1e1e1e;
+    padding-top: 60px;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+    overflow: hidden;
+    height: 100vh;
+    text-align: center;
+    margin-top: 3%;
+}
+
+/************************************************************************************************************/
+
+.line-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 88%;
+    justify-self: center;
+}
+
+.line-top a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #d72638;
+    border: 2px solid #d72638;
+    font-weight: bold;
+    align-self: center;
+    padding: 8px 16px;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.line-top a i{
+    margin-right: 6px;
+}
+
+.line-top a:hover{
+    color: #1e1e1e ;
+    background: #d72638;
+}
+
+.line-top h1{
+    align-self: center;
+    font-size: 60px;
+    color: #d72638;
+    background: #f8f8f8;
+    padding: 10px 80px;
+    border-radius: 30px;
+}
+
+.line-top img{
+    width: 150px;
+}
+
+/*********************************************************************************************************************************************/
+.cardbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 120px;
+}
+
+.photo{
+    position: relative;
+    overflow: hidden;
+    width: 480px;
+    height: 480px;
+    box-shadow: 0px 30px 30px rgba(0,0,0,0.8);
+    transition: 0.5s;
+}
+
+.photo1{
+    box-shadow: 0px 0px 20px #A5051A;
+}
+
+.photo2{
+    box-shadow: 0 0 20px #8EC63F;
+}
+
+.photo3{
+    box-shadow: 0 0 20px #16A1B6;
+}
+
+.card-container{
+    position: relative;
+    background-color: black;
+}
+
+.photo1 .content{
+    background: #A5051A;
+}
+
+.photo2 .content{
+    background: #8EC63F;
+}
+
+.photo3 .content{
+    background: #16A1B6;
+}
+
+.content{
+    position: absolute;
+    bottom: 0px;
+    width: 80%;
+    height: 10px;
+    left: 10%;
+    text-align: center;
+    transition: 0.5s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+h3{
+    font-size: 30px;
+    margin: 25px;
+    color: white;
+}
+
+.content span{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.photo p{
+    width: 80%;
+    margin: 10px auto;
+    font-size: 18px;
+    transition: 0.5s;
+    line-height: 25px;
+    color: white;
+    opacity: 0;
+}
+
+.content a{
+    text-decoration: none;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+    margin-top: 30px;
+    transition: 0.5s;
+    opacity: 0;
+    line-height: 25px;
+}
+
+.img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+
+.photo:hover .content{
+    height: 100%;
+    width: 100%;
+    left: 0;
+}
+
+.photo:hover p,
+.photo:hover a{
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+.photo:hover .img-container img{
+    opacity: 0;
+}
+

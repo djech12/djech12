@@ -81,6 +81,7 @@ header div img{
 .form-group {
     margin-bottom: 15px;
     text-align: left;
+    border: none;
 }
 
 .form-group label {
@@ -118,10 +119,11 @@ header div img{
     border-radius: 30px;
     font-weight: bold;
     display: block;
+    transition: 0.5s;
 }
 
 .btn1:hover {
-    background: #a50f0f;
+    background: #6b0b0b;
 }
 
 .reset {
@@ -169,4 +171,5 @@ header div img{
     header div{
         margin: 2% 0 2% 0;
     }
+
 }
