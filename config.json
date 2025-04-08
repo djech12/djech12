@@ -1,0 +1,13 @@
+{
+    "mysqlOptions": {
+      "authProtocol": "default",
+      "enableSsl": "Disabled"
+    },
+    "previewLimit": 50,
+    "server": "127.0.0.1",
+    "port": 3307,
+    "driver": "MySQL",
+    "name": "MySQL POKUS DVA",
+    "username": "root",
+    "database": "treninky"
+  }
