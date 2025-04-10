@@ -1,6 +1,8 @@
 
 //MENU EFEKT
 const menuItems = document.querySelectorAll(".menu-item");
+const logo1 = document.querySelector(".logo1");
+const contBack = document.querySelector("#container-back");
 
 menuItems.forEach(item => item.addEventListener('click', () => {
     menuItems.forEach(item => item.classList.remove("active"));
@@ -8,19 +10,47 @@ menuItems.forEach(item => item.addEventListener('click', () => {
     menuNav.style.borderTopLeftRadius = "35px";
     menuNav.style.borderTopRightRadius = "35px";
     menuNav.style.border = "none";
+
+
+   const rozvrhButton = document.querySelector(".rozvrh-button");
+   const rozvrhCont = document.querySelector(".rozvrh-container");
+
+   if(rozvrhButton.classList.contains("active")){
+      domuCont.style.display = "none";
+      rozvrhCont.style.display = "flex";
+      logo1.style.display = "none";
+      contBack.style.maxHeight = "180vh";
+   }
+
+   
 }))
 
 
 
 //DOMU
 const domuButton = menuItems[0];
+const menuNav = document.querySelector(".navigation");
+const domuCont = document.querySelector(".domu-container");
 
 domuButton.addEventListener('click', function(){
     document.querySelector("#domu-days").style.display = "block";
-    domuCont.style.background = "f8f8f8";
+    domuCont.style.background = "#f8f8f8";
+    document.querySelector(".first-dropdown-ul").style.display ="none";
+    document.querySelector("body").style.overflowY = "scroll";
 })
 
 
+//USERNAME
+window.addEventListener('DOMContentLoaded', () => {
+    const uzivatel = JSON.parse(sessionStorage.getItem('user'));
+
+    if (uzivatel && uzivatel.jmeno && uzivatel.prijmeni) {
+        document.getElementById('username').innerHTML = `${uzivatel.jmeno} ${uzivatel.prijmeni}`;
+    } else {
+        // Pokud není přihlášený uživatel, přesměruj na login
+        //window.location.href = 'prihlaseni.html';
+    }
+});
 
 //TODAY
 const denElement = document.getElementById('aktualni-den');
@@ -41,8 +71,8 @@ zobrazDatum(aktualniDatum);
 
 
 //CHANGE DAY
-const dayBefore = document.querySelector(".fa-arrow-left");
-const dayAfter = document.querySelector(".fa-arrow-right");
+let dayBefore = document.querySelector(".fa-arrow-left");
+let dayAfter = document.querySelector(".fa-arrow-right");
 
 dayBefore.addEventListener('click', () => {
     aktualniDatum.setDate(aktualniDatum.getDate() - 1);
@@ -127,14 +157,76 @@ document.addEventListener('click', function (event) {
 });
 
 
+//ROZVRH//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//CHANGE MONTH
+const mesice = [
+  'Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen',
+  'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec'
+];
+
+const mesicElement = document.getElementById('aktualni-mesic');
+const grid = document.getElementById("mesicni-grid");
+
+function zobrazMesic(datum) {
+    const mesic = datum.getMonth();
+    const rok = datum.getFullYear();
+    mesicElement.textContent = `${mesice[mesic]} ${rok}`;
+
+    // Začátek měsíce
+    const zacatek = new Date(rok, mesic, 1);
+    const pocatecniDen = (zacatek.getDay() + 6) % 7; // Převod aby Po = 0
+
+    const pocetDni = new Date(rok, mesic + 1, 0).getDate();
+
+    grid.innerHTML = "";
+
+    // Prázdné dny před začátkem měsíce
+    for (let i = 0; i < pocatecniDen; i++) {
+      grid.innerHTML += `<div></div>`;
+    }
+
+    // Vykresli každý den v měsíci
+    for (let den = 1; den <= pocetDni; den++) {
+      const datumStr = `${rok}-${String(mesic + 1).padStart(2, '0')}-${String(den).padStart(2, '0')}`;
+      grid.innerHTML += `<div data-datum="${datumStr}">
+        <strong>${den}</strong>
+        <div class="treninky-container"></div>
+      </div>`;
+    }
+
+    //nactiTreninkyMesicne(rok, mesic + 1); // Zde načti tréninky pro daný měsíc
+  }
+
+document.querySelector('.month-prev').addEventListener('click', () => {
+  aktualniDatum.setMonth(aktualniDatum.getMonth() - 1);
+  zobrazMesic(aktualniDatum);
+  //nactiTreninkyNaDatum(`${aktualniDatum.getFullYear()}-${String(aktualniDatum.getMonth() + 1).padStart(2, '0')}-01`);
+});
+
+document.querySelector('.month-next').addEventListener('click', () => {
+  aktualniDatum.setMonth(aktualniDatum.getMonth() + 1);
+  zobrazMesic(aktualniDatum);
+  //nactiTreninkyNaDatum(`${aktualniDatum.getFullYear()}-${String(aktualniDatum.getMonth() + 1).padStart(2, '0')}-01`);
+});
+
+zobrazMesic(aktualniDatum);
+
+
+//MONTH CONTENT
+
+
+
+
 //DALSI
 const dalsiButton = menuItems[4];
-const menuNav = document.querySelector(".navigation");
-const domuCont = document.querySelector(".domu-container");
 
 dalsiButton.addEventListener('click', function(){
     document.querySelector("#domu-days").style.display = "none";
     document.querySelector(".first-dropdown-ul").style.display ="flex";
+    document.querySelector("body").style.overflow = "hidden";
     domuCont.style.background = "#1e1e1e";
 
     menuNav.style.borderRadius = "0";

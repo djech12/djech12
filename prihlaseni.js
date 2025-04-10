@@ -96,7 +96,10 @@ document.querySelector('#loginForm form').addEventListener('submit', async (e) =
         const result = await res.json();
         if (res.ok) {
             alert('Přihlášení úspěšné!');
-            // tady si můžeš uložit token nebo session a přesměrovat uživatele
+            sessionStorage.setItem('user', JSON.stringify(result.user));
+        
+            // Přesměrování na hlavní stránku
+            window.location.href = 'domu.html';
         } else {
             alert(result.message || 'Nesprávné přihlašovací údaje.');
         }

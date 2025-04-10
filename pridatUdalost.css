@@ -22,10 +22,12 @@ header div img{
 /************************************************************************/
 #container-back{
     background: #1e1e1e;
-    padding-top: 40px; 
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     text-align: center;
+    margin-top: 50px;
+    height: calc(100vh - 50px);
+    align-content: center;
 }
 
 .pridat-container {
@@ -34,12 +36,10 @@ header div img{
     padding: 20px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    margin-top: 20px !important;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
     margin: 0 auto;
-    padding-bottom: 30%;
     border: 10px solid #d72638;
-    border-bottom: 0px;
-    max-height: 82vh;
 }
 
 .pridat-container form{

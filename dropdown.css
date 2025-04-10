@@ -16,6 +16,7 @@
     font-size: 45px;
     text-decoration: none;
     margin: 15px auto;
+    display: flex;
 }
 
 .first-dropdown-ul li:nth-child(5){
@@ -37,6 +38,7 @@
 .first-dropdown-ul .admin{
     font-size: 55px;
     cursor: pointer;
+    margin-top: -15px;
 }
 
 .first-dropdown-ul .admin i{

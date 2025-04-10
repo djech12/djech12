@@ -1,0 +1,66 @@
+.rozvrh-container {
+    background: #f8f8f8;
+    color: #1e1e1e;
+    padding: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: 22px !important;
+    margin-bottom: 50px;
+    border: 10px solid #d72638;
+    border-bottom: 0px;
+    display: none;
+    flex-direction: column;
+}
+
+#rozvrh-months{
+    margin-top: 20px;
+}
+
+#rozvrh-months ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#rozvrh-months ul li i{
+    color: #f8f8f8;
+    background: #d72638;
+    padding: 12px 11px 11px 12px;
+    border-radius: 50%;
+    font-size: 24px;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+#aktualni-mesic{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Monsterat', sans-serif;
+    width: 220px;
+    margin-top: 10px;
+    color: #1e1e1e;
+}
+
+.dny-nazvy,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.dny-nazvy{
+    margin-top: 50px;
+}
+
+.calendar-grid{
+    margin-bottom: 50px;
+}
+
+.dny-nazvy div,
+.calendar-grid div {
+  padding: 10px;
+  border: 1px solid #ccc;
+  min-height: 80px;
+  position: relative;
+}
