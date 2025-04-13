@@ -12,6 +12,7 @@ menuItems.forEach(item => item.addEventListener('click', () => {
     menuNav.style.border = "none";
 
 
+   //ROZVRH MENU
    const rozvrhButton = document.querySelector(".rozvrh-button");
    const rozvrhCont = document.querySelector(".rozvrh-container");
 
@@ -20,14 +21,14 @@ menuItems.forEach(item => item.addEventListener('click', () => {
       rozvrhCont.style.display = "flex";
       logo1.style.display = "none";
       contBack.style.maxHeight = "180vh";
+      document.querySelector("body").style.OverflowY = "scroll";
    }
 
-   
 }))
 
 
 
-//DOMU
+//DOMU (Z DALSI)
 const domuButton = menuItems[0];
 const menuNav = document.querySelector(".navigation");
 const domuCont = document.querySelector(".domu-container");
@@ -36,7 +37,14 @@ domuButton.addEventListener('click', function(){
     document.querySelector("#domu-days").style.display = "block";
     domuCont.style.background = "#f8f8f8";
     document.querySelector(".first-dropdown-ul").style.display ="none";
+    document.querySelector(".second-dropdown-ul").style.display = "none";
     document.querySelector("body").style.overflowY = "scroll";
+
+        // ZOBRAZENÍ VŠECH .trenink ELEMENTŮ
+        const treninky = document.querySelectorAll('.trenink');
+        treninky.forEach(trenink => {
+            trenink.style.display = ""; // nebo "" pro reset stylu
+        });
 })
 
 
@@ -228,6 +236,11 @@ dalsiButton.addEventListener('click', function(){
     document.querySelector(".first-dropdown-ul").style.display ="flex";
     document.querySelector("body").style.overflow = "hidden";
     domuCont.style.background = "#1e1e1e";
+    const treninky = document.querySelectorAll('.trenink');
+
+    treninky.forEach(trenink => {
+        trenink.style.display = "none";
+    });
 
     menuNav.style.borderRadius = "0";
     menuNav.style.borderLeft = "10px solid #d72638";
