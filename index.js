@@ -97,7 +97,15 @@ router.post('/login', (req, res) => {
 
         if (!hesloOk) return res.status(400).json({ message: 'Špatné heslo' });
 
-        res.json({ message: 'Přihlášení úspěšné', user: { id: uzivatel.id, email: uzivatel.email } });
+        res.json({
+            message: 'Přihlášení úspěšné',
+            user: {
+                id: uzivatel.id,
+                email: uzivatel.email,
+                jmeno: uzivatel.jmeno,
+                prijmeni: uzivatel.prijmeni
+            }
+        });
     });
 });
 

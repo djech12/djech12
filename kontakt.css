@@ -1,0 +1,25 @@
+.kontakt-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 100px 0 0 0;
+    align-items: center;
+}
+
+.kontakt-box-content{
+    text-align: left;
+}
+
+.kontakt-box-content, .kontakt-box-content a{
+    color: #f8f8f8;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.kontakt-box-content strong{
+    color: #d72638;
+}
+
+.kontakt-box-map img{
+    width: 550px;
+}

@@ -26,13 +26,28 @@ menuItems.forEach(item => item.addEventListener('click', () => {
 
 }))
 
+//DOCHAZKA 
+const dochazkaButton = menuItems[2];
+const dochazkaCont = document.querySelector(".dochazka-container");
+
+dochazkaButton.addEventListener('click', function(){
+    logo1.style.display = "none";
+    domuCont.style.display = "none";
+    rozvrhCont.style.display = "none";
+    document.querySelector(".first-dropdown-ul").style.display ="none";
+    document.querySelector(".second-dropdown-ul").style.display = "none";
+
+    dochazkaCont.style.display = "flex";
+})
 
 
-//DOMU (Z DALSI)
+
+
 const domuButton = menuItems[0];
 const menuNav = document.querySelector(".navigation");
 const domuCont = document.querySelector(".domu-container");
 
+//DOMU (Z DALSI)
 domuButton.addEventListener('click', function(){
     document.querySelector("#domu-days").style.display = "block";
     domuCont.style.background = "#f8f8f8";
@@ -40,11 +55,21 @@ domuButton.addEventListener('click', function(){
     document.querySelector(".second-dropdown-ul").style.display = "none";
     document.querySelector("body").style.overflowY = "scroll";
 
-        // ZOBRAZENÍ VŠECH .trenink ELEMENTŮ
+        
         const treninky = document.querySelectorAll('.trenink');
         treninky.forEach(trenink => {
-            trenink.style.display = ""; // nebo "" pro reset stylu
+            trenink.style.display = ""; 
         });
+})
+
+//DOMU (Z ROZVRH)
+domuButton.addEventListener('click', function(){
+    const rozvrhCont = document.querySelector(".rozvrh-container");
+
+    document.querySelector("#domu-days").style.display = "block";
+    rozvrhCont.style.display = "none";
+    logo1.style.display = " ";
+    contBack.style.maxHeight = "100vh";
 })
 
 
@@ -55,7 +80,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if (uzivatel && uzivatel.jmeno && uzivatel.prijmeni) {
         document.getElementById('username').innerHTML = `${uzivatel.jmeno} ${uzivatel.prijmeni}`;
     } else {
-        // Pokud není přihlášený uživatel, přesměruj na login
         //window.location.href = 'prihlaseni.html';
     }
 });
@@ -137,6 +161,14 @@ function zobrazTreninky(treninky) {
         `;
 
         container.appendChild(div);
+
+        document.querySelector(".trenink-rozvrh").innerHTML = `
+        
+            <h3>${trenink.sport} - ${trenink.podnazev}</h3>
+
+            <p>${JSON.parse(trenink.kategorie).join(', ')} | ${JSON.parse(trenink.dovednost).join(', ')}</p>
+            
+        `;
     });
 }
 
@@ -147,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //PRIHLAS TRENINK
 document.addEventListener('click', function (event) {
-    // Zjisti, jestli bylo kliknuto na ikonku přihlášení
+    //Přihlášení
     if (event.target.classList.contains('fa-circle-plus')) {
         const btn = event.target.closest('.trenink-btn');
         btn.innerHTML = '<i class="fa-solid fa-circle-minus"></i>';
@@ -155,7 +187,7 @@ document.addEventListener('click', function (event) {
         btn.classList.remove('trenink-odhlasen');
     }
 
-    // Zjisti, jestli bylo kliknuto na ikonku odhlášení
+    //Odhlášení
     if (event.target.classList.contains('fa-circle-minus')) {
         const btn = event.target.closest('.trenink-btn');
         btn.innerHTML = '<i class="fa-solid fa-circle-plus"></i>';
@@ -164,6 +196,12 @@ document.addEventListener('click', function (event) {
     }
 });
 
+const prihlTren = document.querySelectorALL(".trenink-btn");
+
+if (prihlTren.classList.contains(".trenink-prihlasen")){
+    const dochazkaTren = document.createElement("div");
+    dochazkaTren.classList.add("trenink-dochazka")
+}
 
 //ROZVRH//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -185,7 +223,7 @@ function zobrazMesic(datum) {
 
     // Začátek měsíce
     const zacatek = new Date(rok, mesic, 1);
-    const pocatecniDen = (zacatek.getDay() + 6) % 7; // Převod aby Po = 0
+    const pocatecniDen = (zacatek.getDay() + 6) % 7;
 
     const pocetDni = new Date(rok, mesic + 1, 0).getDate();
 
@@ -201,7 +239,7 @@ function zobrazMesic(datum) {
       const datumStr = `${rok}-${String(mesic + 1).padStart(2, '0')}-${String(den).padStart(2, '0')}`;
       grid.innerHTML += `<div data-datum="${datumStr}">
         <strong>${den}</strong>
-        <div class="treninky-container"></div>
+        <div class="trenink-rozvrh"></div>
       </div>`;
     }
 
@@ -222,8 +260,6 @@ document.querySelector('.month-next').addEventListener('click', () => {
 
 zobrazMesic(aktualniDatum);
 
-
-//MONTH CONTENT
 
 
 

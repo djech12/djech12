@@ -31,8 +31,13 @@
     transition: 0.5s;
 }
 
-.first-dropdown-ul li:hover, .premium:hover{
-    text-decoration: underline;
+.first-dropdown-ul li:not(.admin):hover,
+.premium:hover {
+  text-decoration: underline;
+}
+
+.admin:hover{
+    color: #d72638;
 }
 
 .first-dropdown-ul .admin{
@@ -43,10 +48,6 @@
 
 .first-dropdown-ul .admin i{
     margin-left: 7px;
-}
-
-.admin i:hover{
-    text-decoration: none;
 }
 
 .premium{

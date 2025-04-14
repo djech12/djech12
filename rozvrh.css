@@ -64,3 +64,16 @@
   min-height: 80px;
   position: relative;
 }
+
+.trenink-rozvrh {
+    margin-top: 4px;
+    font-size: 0.75rem;
+}
+  
+.trenink-item {
+    background: #282828;
+    color: white;
+    padding: 2px 4px;
+    margin-top: 2px;
+    border-radius: 4px;
+}
